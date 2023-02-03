@@ -1,20 +1,3 @@
-import 'dart:io';
-
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:food_delivery_app/commonwidgets/abs_button.dart';
-import 'package:food_delivery_app/commonwidgets/appbar_widget.dart';
-import 'package:food_delivery_app/utils/abs_colors.dart';
-import 'package:food_delivery_app/utils/abs_text_style.dart';
-import 'package:food_delivery_app/utils/app_assets.dart';
-import 'package:food_delivery_app/utils/utils.dart';
-import 'package:get/get.dart';
-import 'package:http/http.dart';
-import 'package:image_picker/image_picker.dart';
-
-import '../../../commonwidgets/abs_textfeild_widget.dart';
-import '../../../data/api/api_models/user_details_model.dart';
-import '../profile_controller.dart';
 
 class EditProfileScreen extends StatefulWidget {
   const EditProfileScreen({Key? key}) : super(key: key);
@@ -24,6 +7,9 @@ class EditProfileScreen extends StatefulWidget {
 }
 
 class _EditProfileScreenState extends State<EditProfileScreen> {
+  
+  /////////////////////Init TextEditingController //////////////////////
+  
   TextEditingController firstNameC = TextEditingController();
   TextEditingController lastNameC = TextEditingController();
   TextEditingController emailC = TextEditingController();
@@ -45,6 +31,8 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
     //     name: 'Description', title: 'Enter Description', id: '1'),
     ProfileEditPackage(name: 'DOB', title: 'DD/MM/YY', id: '2'),
   ];
+  
+  final profileController = Get.find<ProfileController>();
 
   String initialValue = '';
   bool readOnly = false;
@@ -58,7 +46,6 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
     super.initState();
   }
 
-  final profileController = Get.find<ProfileController>();
 
   @override
   Widget build(BuildContext context) {
