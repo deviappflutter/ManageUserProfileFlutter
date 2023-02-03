@@ -30,6 +30,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
   List<ProfileEditPackage> editProfileData1 = [
     ProfileEditPackage(name: 'DOB', title: 'DD/MM/YY', id: '2'),
   ];
+  
   final profileController = Get.find<ProfileController>();
 
 
