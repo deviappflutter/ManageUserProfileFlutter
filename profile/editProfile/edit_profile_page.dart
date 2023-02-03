@@ -7,9 +7,10 @@ class EditProfileScreen extends StatefulWidget {
 }
 
 class _EditProfileScreenState extends State<EditProfileScreen> {
-  
+
   /////////////////////Init TextEditingController //////////////////////
-  
+
+
   TextEditingController firstNameC = TextEditingController();
   TextEditingController lastNameC = TextEditingController();
   TextEditingController emailC = TextEditingController();
@@ -27,12 +28,10 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
     ProfileEditPackage(name: 'Location', title: 'Enter Location', id: '4'),
   ];
   List<ProfileEditPackage> editProfileData1 = [
-    // ProfileEditPackage(
-    //     name: 'Description', title: 'Enter Description', id: '1'),
     ProfileEditPackage(name: 'DOB', title: 'DD/MM/YY', id: '2'),
   ];
-  
   final profileController = Get.find<ProfileController>();
+
 
   String initialValue = '';
   bool readOnly = false;
@@ -45,7 +44,6 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
     profileController.previousImagePath.value=userDetailsModel.data?.attachment?.attach?.original?.url ?? '';
     super.initState();
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -259,7 +257,6 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
           children: [
             Row(
               children: [
-                // AddSpace.horizontal(50.w),
                 Expanded(
                   child: Divider(
                     thickness: 1,
@@ -341,14 +338,10 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                         ),
                       ),
                     ),
-                    // AddSpace.horizontal(17.w),
                     Expanded(
                         flex: 7,
                         child: AbsTextFeild(
                             controller: textConntroller,
-                            // onSubmit: (p0) {
-                            //   updateUser();
-                            // },
                             suffixIcon: profileController.editable?
                             profileController.readOnly
                                 ? const Icon(Icons.edit,
@@ -356,7 +349,6 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                                 : const Icon(Icons.edit,
                                 color: AbsColors.selectColor, size: 20):const Icon(Icons.edit,
                                 color: Colors.transparent),
-                            // initialValue: initialValue,
                             keyboardType: inputType,
                             hintLebel: editProfileData[index].title,
                             fillColor: Colors.white,
@@ -473,11 +465,9 @@ class EditProfileWidget extends StatelessWidget {
 
   Future<void> pickImage() async {
     final ImagePicker _picker = ImagePicker();
-    // Pick an image
     final XFile? image = await _picker.pickImage(source: ImageSource.gallery);
     profileController.imgPath.value = image?.path ?? '';
     profileController.previousImagePath.value='';
-    print('image=>${image?.path}');
   }
 
 

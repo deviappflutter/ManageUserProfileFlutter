@@ -1,18 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:food_delivery_app/commonwidgets/abs_button.dart';
-import 'package:food_delivery_app/data/api/api_models/user_details_model.dart';
-import 'package:food_delivery_app/pages/auth/login/login_screen.dart';
-import 'package:food_delivery_app/pages/profile/profile_controller.dart';
-import 'package:food_delivery_app/utils/abs_text_style.dart';
-import 'package:food_delivery_app/utils/app_assets.dart';
-import 'package:food_delivery_app/utils/app_string.dart';
-import 'package:food_delivery_app/utils/utils.dart';
-import 'package:get/get.dart';
-import '../../utils/abs_colors.dart';
-import '../../utils/abs_error_indicator.dart';
-import '../../utils/app_preferences.dart';
+
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({Key? key}) : super(key: key);
@@ -22,6 +8,7 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
+
   List<ProfilePackage> profilePackage = [
     ProfilePackage(
         title: 'Order',
@@ -241,7 +228,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         ),
                         padding:
                         EdgeInsets.only(left: 16.w, top: 15.h, bottom: 9.h),
-                        // height: 254.h,
                         decoration: BoxDecoration(
                           boxShadow: [
                             BoxShadow(
@@ -284,19 +270,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 profilePackage[index].id == '1'
                                     ? Get.toNamed("/myOrder")
                                     : Container();
-                                // profilePackage[index].id == '2'
-                                //     ? Get.toNamed("/confirmOrder")
-                                //     : Container();
                                 profilePackage[index].id == '3'
                                     ? Get.toNamed("/address")
                                     : Container();
-                                // profilePackage[index].id == '4'
-                                //     ? Get.toNamed("/paymentScreen")
-                                //     : Container();
                               },
                               child: Column(
                                 children: [
-                                  // AddSpace.vertical(11.h),
                                   Row(
                                     crossAxisAlignment:
                                     CrossAxisAlignment.center,
@@ -440,7 +419,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
             },
             child: Column(
               children: [
-                // AddSpace.vertical(11.h),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -542,7 +520,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
             },
             child: Column(
               children: [
-                // AddSpace.vertical(11.h),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.start,
